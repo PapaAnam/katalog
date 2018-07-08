@@ -64,7 +64,7 @@ class koneksi{
     $rec_count = mysqli_num_rows($result);
     $data = array();
     if ($rec_count>0) {
-        while($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+        while($row = mysqli_fetch_assoc($result)) {
             foreach ($row as $key => $value) {
                 if ($value == "true" OR $value == "false") {
                     $row[$key] = $value == "true";
